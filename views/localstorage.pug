@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1= title
+  p Exercise of localStorage.
+  // https://bitsofco.de/an-overview-of-client-side-storage/
+  p Because localStorage obeys site of origin, so data saved in localStorage can only 
+    | be accessed in pages of the same domain.
+  p Data saved in localStorage is persistent, means we can access it some other day.
+
+  p Press button Set to save data in textbox to localStorage, press button Get to display data in localStorage.
+
+  form(action="", method="POST")
+    input(type=text, id="indata")
+    button(type="button", onclick="handleset()") Set
+  div
+    button(type="button", onclick="handleget()") Get
+  div#outdata
+  script.
+    handleset=function(){
+      console.log("name="+document.getElementById("indata").value)
+      localStorage.setItem("name", document.getElementById("indata").value)
+    }
+    handleget=function(){
+      console.log("name="+localStorage.getItem("name"))
+      document.getElementById("outdata").innerText= localStorage.getItem("name")
+    }
+
+
