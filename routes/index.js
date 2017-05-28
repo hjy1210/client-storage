@@ -10,4 +10,8 @@ router.get('/localstorage',function(req, res, next) {
   res.render('localstorage', { title: 'localStorage' });
 });
 
+router.get('/indexeddb',function(req, res, next) {
+  res.render('indexeddb', { title: 'indexedDB' });
+});
+
 module.exports = router;

@@ -1,0 +1,79 @@
+extends layout
+
+block content
+  h1= title
+  p Exercise of indexedDB.
+  // https://bitsofco.de/an-overview-of-client-side-storage/
+  p Because indexedDB obeys site of origin, so data saved in indexedDB can only 
+    | be accessed in pages of the same domain.
+  p Data saved in indexedDB is persistent, means we can access it some other day.
+
+  p.
+   Package localForage can use localStorage,indexedDB and WebSQL as backbone.
+   localForage supports storing all native JS objects that can be serialized to JSON, 
+   as well as ArrayBuffers, Blobs, and TypedArrays. Check the API docs for a full list of types 
+   supported by localForage. See https://localforage.github.io/localForage/
+
+
+  p Press button Set to save data in indexedDB, press button Get to extract and display data in indexedDB.
+
+  form(action="", method="POST")
+    input(type="file", id="indata" onchange="handleset()")
+  div
+    button(type="button", onclick="handleget()") Get
+  div
+    img#outdata(width="100%")
+  div#keys
+
+  script(src='./javascripts/localforage.js')
+  script.
+    var  dbkeys
+    localforage.config({
+      driver      : localforage.indexedDB, // Force WebSQL; same as using setDriver() 
+      name        : 'myApp',
+      version     : 1.0,
+      size        : 49807360, // Size of database, in bytes. WebSQL-only for now. 
+      storeName   : 'keyvaluepairs', // Should be alphanumeric, with underscores. 
+      description : 'some description'
+    })
+
+    handleset=function(){
+      var count=document.getElementById("indata").files.length
+      console.log("count ="+count)
+      var reader=new FileReader()
+      var file = document.getElementById("indata").files[0];
+      reader.onloadend = (ev)=>{
+        var buf = ev.target.result
+        localforage.setItem('imgbuf',buf).then((image)=>{
+          var blob = new Blob([reader.result]);
+          var imageURL = window.URL.createObjectURL(blob);
+          document.getElementById('outdata').src=imageURL
+        })
+      }
+      reader.readAsArrayBuffer(file)
+    }
+    handleget=function(){
+     localforage.getItem("imgbuf")
+        .then((image)=>{
+          var blob = new Blob([image]);
+          var imageURL = window.URL.createObjectURL(blob);
+          document.getElementById('outdata').src=imageURL
+        })
+    }
+
+    localforage.keys().then(function(keys) {
+      console.log(keys);
+      console.log(keys.length)
+      var ul=document.createElement("ul")
+      for (var i=0;i<keys.length;i++){
+        console.log(keys[i])
+        var li=document.createElement("li")
+        li.innerText=keys[i]
+        ul.appendChild(li)
+      }
+      document.getElementById("keys").appendChild(ul)
+    }).catch(function(err) {
+      // This code runs if there were any errors
+      console.log(err);
+    });
+
