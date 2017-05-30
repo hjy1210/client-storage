@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "devstart": "nodemon ./bin/www"
+    "devstart": "nodemon ./bin/www",
+    "gulp": "gulp"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
@@ -14,6 +15,21 @@
     "localforage": "^1.5.0",
     "morgan": "~1.7.0",
     "pug": "~2.0.0-beta10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "request": "^2.81.0",
     "serve-favicon": "~2.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browserify": "^14.4.0",
+    "gulp": "^3.9.1",
+    "react": "^15.5.4",
+    "react-tools": "^0.13.3",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0",
+    "webpack": "^2.6.1"
   }
 }

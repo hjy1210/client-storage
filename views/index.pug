@@ -3,3 +3,12 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  ul
+    li #[a(href="/") home page]
+    li #[a(href="/localstorage") localStorage demo]
+    li #[a(href="/indexeddb") indexedDB demo]
+    li #[a(href="/api") jobs list in react]
+    li #[a(href="/api/jobs") restful job list]
+    li #[a(href="/api/jobs/1") restful job with job_id=1]
+
+

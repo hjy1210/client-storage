@@ -17,3 +17,15 @@ study client-side storages: localstorage, web-sql,  indexeddb, filesystem-api
 * [File](https://developer.mozilla.org/en-US/docs/Web/API/File)
 * [FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
 * [FileAPI](https://w3c.github.io/FileAPI/)
+
+## react+express
+#### React.js Tutorial
+* [React.js Tutorial Part 1](http://www.joshfinnie.com/blog/reactjs-tutorial-part-1/)
+* [React.js Tutorial Part 2](http://www.joshfinnie.com/blog/reactjs-tutorial-part-2/)
+* [React.js Tutorial Part 3](http://www.joshfinnie.com/blog/reactjs-tutorial-part-3/)
+* [React.js Tutorial Part 4](http://www.joshfinnie.com/blog/reactjs-tutorial-part-4/)
+
+Note: 
+* react and react-dom are separated now. ReactDom is not in react now.
+* React.creatClass is deprecated now.
+* reactify dependents on react-tools
