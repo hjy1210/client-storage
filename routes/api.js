@@ -5,7 +5,7 @@ var jobs = {
   jobs: [
     {
       job_id: 1,
-      company: 'TrackMaven 楊宏章',
+      company: 'TrackMaven',
       position: 'Software Maven',
       local: 'Washington, DC, USA',
       lookingFor: 'Angular.js, Django, ElasticSearch',

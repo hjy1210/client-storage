@@ -90561,16 +90561,6 @@ module.exports = Job
 
 },{"react":442}],549:[function(require,module,exports){
 var React = require('react');
-var ReactDOM = require('react-dom');
-//var HelloWorld = require('./HelloWorld.jsx');
-var Jobs = require('./jobs.jsx');
-
-ReactDOM.render(
-    React.createElement(Jobs, null),
-    document.getElementById('job-post')
-);
-},{"./jobs.jsx":550,"react":442,"react-dom":291}],550:[function(require,module,exports){
-var React = require('react');
 var request = require('request');
 var Job = require('./Job.jsx');
 
@@ -90637,4 +90627,14 @@ class Jobs extends React.Component {
 
 module.exports = Jobs
 
-},{"./Job.jsx":548,"react":442,"request":443}]},{},[549]);
+},{"./Job.jsx":548,"react":442,"request":443}],550:[function(require,module,exports){
+var React = require('react');
+var ReactDOM = require('react-dom');
+//var HelloWorld = require('./HelloWorld.jsx');
+var Jobs = require('./jobs.jsx');
+
+ReactDOM.render(
+    React.createElement(Jobs, null),
+    document.getElementById('job-post')
+);
+},{"./jobs.jsx":549,"react":442,"react-dom":291}]},{},[550]);
