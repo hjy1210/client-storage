@@ -29,3 +29,19 @@ Note:
 * react and react-dom are separated now. ReactDom is not in react now.
 * React.creatClass is deprecated now.
 * reactify dependents on react-tools
+* react-tool is deprecated now, use babel instead
+
+* `npm install` to install packages.
+* `npm run gulp` to build client side codes and monitor changes.
+* `npm run devstart` to start express server and monitor changes.
+* `npm run build` to bundle client codes and monitor changes with webpack. 
+    * [screendriver](https://github.com/screendriver) gave answer in [cannot resolve 'fs','net','tls' issue](https://github.com/request/request/issues/1529). use `  node: {
+    console: true,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  }` in webpack.config.js.
+    * still have message: `WARNING in ./~/ajv/lib/async.js
+96:20-33 Critical dependency: the request of a dependency is an expression.`
+* move gulp method to webpack method.
+

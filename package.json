@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "build": "webpack --progress --colors --watch"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
@@ -24,11 +25,14 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "browserify": "^14.4.0",
+    "css-loader": "^0.28.4",
     "gulp": "^3.9.1",
-    "react": "^15.5.4",
+    "json-loader": "^0.5.4",
     "react-tools": "^0.13.3",
     "reactify": "^1.1.1",
+    "style-loader": "^0.18.1",
     "vinyl-source-stream": "^1.1.0",
     "webpack": "^2.6.1"
   }

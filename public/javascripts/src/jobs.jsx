@@ -30,7 +30,7 @@ class Jobs extends React.Component {
     this.state = { data: [] }
   }
   componentDidMount() {
-    request('http://localhost:3000/api/jobs/', function (error, response, body) {
+    request.get('http://localhost:3000/api/jobs/', function (error, response, body) {
       var result = JSON.parse(body);
       console.log(result)
       //if (this.isMounted()) {
