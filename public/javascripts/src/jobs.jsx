@@ -5,38 +5,18 @@ var Job = require('./Job.jsx');
 class Jobs extends React.Component {
   constructor(props) {
     super(props)
-    /*this.state = {
-      data: [
-        {
-          company: 'TrackMaven',
-          position: 'Software Maven',
-          local: 'Washington, DC, USA',
-          lookingFor: 'Angular.js, Django, ElasticSearch',
-          postedDate: '4 April 2015',
-          description: '',
-          category: 'Engineering'
-        },
-        {
-          company: 'TrackMaven',
-          position: 'Junior Software Maven',
-          local: 'Washington, DC, USA',
-          lookingFor: 'Javascript, Python',
-          postedDate: '4 April 2015',
-          description: '',
-          category: 'Engineering'
-        }
-      ]
-    }*/
     this.state = { data: [] }
+    this.getData=this.getData.bind(this)
+  }
+  getData(){
+    request.get('http://localhost:3000/api/jobs/', (error, response, body)=> {
+      var result = JSON.parse(body);
+      //console.log(result)
+      this.setState({data:result.data.jobs});
+    })
   }
   componentDidMount() {
-    request.get('http://localhost:3000/api/jobs/', function (error, response, body) {
-      var result = JSON.parse(body);
-      console.log(result)
-      //if (this.isMounted()) {
-        this.setState({data:result.data.jobs});
-      //}
-    }.bind(this));
+    this.getData();
   }
   render() {
     return (
