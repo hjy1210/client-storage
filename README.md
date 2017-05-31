@@ -44,4 +44,5 @@ Note:
     * still have message: `WARNING in ./~/ajv/lib/async.js
 96:20-33 Critical dependency: the request of a dependency is an expression.`
 * move gulp method to webpack method.
+* use isomorphic-fetch to replace request, warning are the same.
 

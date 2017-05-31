@@ -1,22 +1,26 @@
 var React = require('react');
 var request = require('request');
 var Job = require('./Job.jsx');
+import 'babel-polyfill'
+import fetch from 'isomorphic-fetch'
 
 class Jobs extends React.Component {
   constructor(props) {
     super(props)
     this.state = { data: [] }
+    fetch('http://localhost:3000/api/jobs/')
+      .then(response => response.json())
+      .then(result=>this.setState({data:result.data.jobs}))
     this.getData=this.getData.bind(this)
   }
   getData(){
     request.get('http://localhost:3000/api/jobs/', (error, response, body)=> {
       var result = JSON.parse(body);
-      //console.log(result)
       this.setState({data:result.data.jobs});
     })
   }
   componentDidMount() {
-    this.getData();
+    //this.getData();
   }
   render() {
     return (

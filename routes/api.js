@@ -22,7 +22,18 @@ var jobs = {
       postedDate: '4 April 2015',
       description: '',
       category: 'Engineering'
+    },
+    {
+      job_id: 3,
+      company: 'IBM',
+      position: 'Senior Software Manager',
+      local: 'Taiwan',
+      lookingFor: 'React, Python',
+      postedDate: '4 April 2017',
+      description: '',
+      category: 'Engineering'
     }
+
   ]
 }
 
