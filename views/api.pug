@@ -7,4 +7,4 @@ block content
   p Welcome to #{title}
   #job-post
   script(src='/javascripts/build/myapp.js')
-  script() MathJax.Hub.Typeset('job-post')
+  script() MathJax.Hub.Queue(["Typeset",MathJax.Hub,"job-post"]);

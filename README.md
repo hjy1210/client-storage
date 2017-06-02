@@ -46,3 +46,7 @@ Note:
 * move gulp method to webpack method.
 * use isomorphic-fetch to replace request, warning are the same.
 
+* use mathjax to typeset mathematical formula.
+* [Modifying Math on the Page](http://docs.mathjax.org/en/latest/advanced/typeset.html#typeset-math) 
+show how to dynamically Typeset formula.
+
