@@ -1,7 +1,10 @@
 extends layout
 
 block content
+  script(type="text/x-mathjax-config") MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}})
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML")
   h1= title
   p Welcome to #{title}
   #job-post
   script(src='/javascripts/build/myapp.js')
+  script() MathJax.Hub.Typeset('job-post')

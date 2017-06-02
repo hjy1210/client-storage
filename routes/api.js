@@ -5,8 +5,8 @@ var jobs = {
   jobs: [
     {
       job_id: 1,
-      company: 'TrackMaven',
-      position: 'Software Maven',
+      company: 'TrackMaven $x^3$',
+      position: 'Software Maven\\[x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\\]',
       local: 'Washington, DC, USA',
       lookingFor: 'Angular.js, Django, ElasticSearch',
       postedDate: '4 April 2015',
@@ -15,7 +15,7 @@ var jobs = {
     },
     {
       job_id: 2,
-      company: 'TrackMaven',
+      company: 'TrackMaven \\(x^2\\)',
       position: 'Junior Software Maven',
       local: 'Washington, DC, USA',
       lookingFor: 'Javascript, Python',
@@ -30,7 +30,7 @@ var jobs = {
       local: 'Taiwan',
       lookingFor: 'React, Python',
       postedDate: '4 April 2017',
-      description: '',
+      description: '\(x^2\)',
       category: 'Engineering'
     }
 
