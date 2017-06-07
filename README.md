@@ -50,3 +50,4 @@ Note:
 * [Modifying Math on the Page](http://docs.mathjax.org/en/latest/advanced/typeset.html#typeset-math) 
 show how to dynamically Typeset formula.
 
+* use img tag to display image stored on server in binary format.[store/display an image in mongodb using mongoose/express](https://gist.github.com/aheckmann/2408370)
