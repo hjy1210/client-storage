@@ -51,3 +51,25 @@ Note:
 show how to dynamically Typeset formula.
 
 * use img tag to display image stored on server in binary format.[store/display an image in mongodb using mongoose/express](https://gist.github.com/aheckmann/2408370)
+## multer demo
+
+controller part:
+```
+var multer = require('multer')
+
+router.post('/profile', multer().single('avatar'),function (req, res, next) {
+  // req.file is the `avatar` file
+  // req.body will hold the text fields, if there were any
+  console.log(req.file)
+  console.log(req.body.firstname)
+  res.end("File is uploaded to server's memory as Buffer")
+})
+```
+view part:
+```
+form(action="/profile", method="post" ,enctype="multipart/form-data")
+    input(type="text", name="firstname", id="firstname")
+    input(type="file", name="avatar", id="avatar")
+    input(type="submit")```
+
+

@@ -11,5 +11,9 @@ block content
     li #[a(href="/api/jobs") restful job list]
     li #[a(href="/api/jobs/1") restful job with job_id=1]
     li #[a(href="/image" width="300px") display image from binary] 
+  form(action="/profile", method="post" ,enctype="multipart/form-data")
+    input(type="text", name="firstname", id="firstname")
+    input(type="file", name="avatar", id="avatar")
+    input(type="submit")
 
 
