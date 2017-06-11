@@ -27,7 +27,13 @@ router.get('/indexeddb',function(req, res, next) {
   res.render('indexeddb', { title: 'indexedDB' });
 });
 
-router.get('/image',function(req, res, next) {
+router.get('/image',
+  function(req, res, next) {
+  res.setHeader("Content-Security-Policy", "script-src https://cdnjs.cloudflare.com;");
+  res.setHeader('charset', 'utf-8')
+  next();
+},
+  function(req, res, next) {
   res.render('image');
 });
 

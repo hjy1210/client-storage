@@ -2,3 +2,7 @@ extends layout
 
 block content
   img(src="http://localhost:3000/image/a" width="50%")
+  div
+    p inline javascript can be disabled by Content-Security-Policy. Without Content-Security-Policy, an alert dialog
+    | pop up when visiting this page.
+    script() alert('Hello')

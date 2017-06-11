@@ -71,5 +71,36 @@ form(action="/profile", method="post" ,enctype="multipart/form-data")
     input(type="text", name="firstname", id="firstname")
     input(type="file", name="avatar", id="avatar")
     input(type="submit")```
+```
 
+## Content-Security-policy & XSS
+We can use Content-Security-policy to help browser protect users from XSS attack.
 
+It seems Chrome and Edge respect Content-Security-policy but IE do not.
+
+When the Content-Security-policy is changed, the browser's cache may affect the time it takes to take effect.
+
+[Excess XSS](https://excess-xss.com/) is a good tutorial about XSS.
+[White List](https://excess-xss.com/whitelisting/) also.
+
+[MDN Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is a must reference.
+
+On [Wiki Web Application Security](https://en.wikipedia.org/wiki/Web_application_security),
+XSS and Sql injection are the top two threats.
+
+[XSRF Cross-site_request_forgery](https://en.wikipedia.org/wiki/Cross-site_request_forgery) is another threat.
+
+Middleware to set Content-Security-Policy, accept https://cdnjs.cloudflare.com, refuse inline script.
+```
+  function(req, res, next) {
+  res.setHeader("Content-Security-Policy", "script-src https://cdnjs.cloudflare.com;");
+  res.setHeader('charset', 'utf-8')
+  next();
+}
+```
+View
+```
+  div
+    p inline javascript can be disabled by Content-Security-Policy.
+    script() alert('Hello')
+```
