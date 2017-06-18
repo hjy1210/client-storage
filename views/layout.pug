@@ -3,9 +3,81 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML")
+    style.
+      table, th, td {
+        border: 1px solid black;
+        padding: 3px;
+        text-align:center;
+      }
+    script(type="text/x-mathjax-config").
+      MathJax.Ajax.config.path["mhchem"] =  "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.2.0";
+      MathJax.Hub.Config({
+        extensions: ["[mhchem]/mhchem.js"]
+      })   
+    script(async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
   body
     P Hello , MathJax in action.
-    p Sole equation \( ax^2+bx+c=0\), we got \(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\).
+    p.
+      Sole equation \( ax^2+bx+c=0\), we got \(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\).
+      <table>
+        <tr>
+          <th rowspan="2">實驗</th>
+          <th colspan="2">初始濃度(M)</th>
+          <th colspan="2">平衡濃度(M)</th>
+        </tr>
+        <tr>
+          <td>\([\mbox{NO}_2]\)</td>
+          <td>\([\mbox{N}_2\mbox{O}_4]\)</td>
+          <td>\([\mbox{NO}_2]\)</td>
+          <td>\([\mbox{N}_2\mbox{O}_4]\)</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0.00</td>
+          <td>0.67</td>
+          <td>0.055</td>
+          <td>0.64</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>0.05</td>
+          <td>0.45</td>
+          <td>0.046</td>
+          <td>0.45</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>0.03</td>
+          <td>0.50</td>
+          <td>0.048</td>
+          <td>0.49</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>0.20</td>
+          <td>0.00</td>
+          <td>0.020</td>
+          <td>0.09</td>
+        </tr>
+      </table>
+    p 試問下列哪一數字最接近\(\mbox{N}_2\mbox{O}_4\mbox{(g)} \stackrel{\scriptscriptstyle \mathrm{Ni,700K}}{\rightleftharpoons} 2\mbox{NO}_2\mbox{(g)}\)反應的平衡常數？
+    p 試問下列哪一數字最接近\(\ce{N2O4(g) <-->[\scriptscriptstyle Ni,700K] 2NO2(g)}\)
+    p 試問下列哪一數字最接近\(\ce{N2O4(g) <=>[\scriptscriptstyle Ni,700K] 2NO2(g)}\)
+    p \(\ce{$n$H2O}\)反應的平衡常數？
+    p \(\ce{CH4 + 2 $\left( \ce{O2 + 79/21 N2} \right)$}\)
+    p \(\ce{H2(aq)}\)
+    p \(\ce{[Pt(\eta^2-C2H4)Cl3]-}\)
+    p.
+      \(\ce{Zn^2+
+      <=>[+ 2OH^-][+ 2H^+]
+      $\underset{\text{amphoteres Hydroxid}}{\ce{Zn(OH)2 v}}$
+      <=>[+ 2OH^-][+ 2H^+]
+      $\underset{\text{Hydroxozikat}}{\ce{[Zn(OH)4]^2-}}$
+      }\)
+    p \(\ce{A <=>[x][x_i] B}\)
+    p \(\ce{A <=>[$x$][$x_i$] B}\)
+    p \(\ce{{(+)}_589{-}[Co(en)3]Cl3}\)
+    p \(\ce{{(+)}_589-[Co(en)3]Cl3}\)
+    p #[a(href='https://mhchem.github.io/MathJax-mhchem') MathJax-mhchem] is the reference resource.
     block content
 
